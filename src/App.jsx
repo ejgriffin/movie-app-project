@@ -4,8 +4,7 @@ import Homepage from "./pages/Homepage";
 import MovieDetails from "./pages/MovieDetails";
 
 import "./App.css";
-
-console.log(import.meta.env.VITE_API_BASE_URL);
+import "./general-styles/styles.css";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Homepage />} />
         <Route path={"/favorites"} element={<Favorites />} />
-        <Route path={"/details/"} element={<MovieDetails />} />
+        <Route path={"/details/:id"} element={<MovieDetails />} />
         <Route path={"*"} element={<Homepage />} />
       </Routes>
       <footer>FOOTER</footer>

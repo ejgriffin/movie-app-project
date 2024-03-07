@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Genres from "../Genres/Genres";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -17,7 +18,6 @@ export default function Slider() {
       }`
     )
       .then((res) => {
-        console.log(res.data.results);
         setUpcoming(res.data.results);
       })
       .catch((err) => console.log(err));
@@ -85,6 +85,9 @@ export default function Slider() {
             />
           )}
         </div>
+        <Link to={"/details"} className="see-details">
+          See Details
+        </Link>
       </div>
     </div>
   );
